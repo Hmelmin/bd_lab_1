@@ -1,0 +1,52 @@
+<form method="post" action="">
+	{% csrf_token %}
+
+	<table align="left" border="1" cellpadding="1" cellspacing="1" style="width: 500px">
+		<caption>New flight</caption>
+		<tbody>
+			<!--<tr>-->
+				<!--<td>flight</td>-->
+				<!--<td><input maxlength="10" name="reis" size="10" type="text" value=""></td>-->
+			<!--</tr>-->
+			<tr>
+				<td>Airlines</td>
+				<td><input type="text" name="avia" value={{query.airlines.name}}>
+
+				</td>
+			</tr>
+			<tr>
+				<td>Departure</td>
+				<td><input type="text" name="city_out" value={{query.departure.city}}>
+
+				</td>
+			</tr>
+			<tr>
+				<td>Destination</td>
+				<td><input type="text" name="city_in" value={{query.destination.city}}>
+
+				</td>
+			</tr>
+			<tr>
+				<td>plane</td>
+				<td><input type="text" name="plane" value={{query.plane.name}}>
+
+				</td>
+			</tr>
+			<tr>
+				<td>Date of departure</td>
+				<td><input type="date"  name="date_out" value={{query.date}} ></td>
+			</tr>
+			<tr>
+				<td>Passengers</td>
+				<td><input type="text"  name="passengers" value={{query.passengers}} ></td>
+			</tr>
+
+
+			<tr>
+				<td><input name="ins" type="submit" value="Save"></td>
+				<td><input name="del" type="reset" value="Discard"></td>
+			</tr>
+		</tbody>
+	</table>
+
+</form>

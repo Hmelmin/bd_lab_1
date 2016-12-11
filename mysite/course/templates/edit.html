@@ -1,0 +1,60 @@
+<form method="post" action="">
+	{% csrf_token %}
+
+	<table align="left" border="1" cellpadding="1" cellspacing="1" style="width: 500px">
+		<caption>Edit</caption>
+		<tbody>
+			<tr>
+				<td>Farm</td>
+				<td><select name="farm">
+					{% for row in farm %}
+						 {% if query.farm.id == row.id %}
+                            <option value="{{row.id}}" selected>{{row}}</option>
+                        {% else %}
+                            <option value="{{row.id}}">{{row}}</option>
+                        {% endif%}
+					{% endfor %}
+				</select></td>
+			</tr>
+			<tr>
+				<td>Type</td>
+				<td><select name="type">
+					{% for row in type %}
+						 {% if query.type.id == row.id %}
+                            <option value="{{row.id}}" selected>{{row}}</option>
+                        {% else %}
+                            <option value="{{row.id}}">{{row}}</option>
+                        {% endif%}
+					{% endfor %}
+				</select></td>
+			</tr>
+			<tr>
+				<td>Region</td>
+				<td><select name="region">
+					{% for row in region %}
+						 {% if query.region.id == row.id %}
+                            <option value="{{row.id}}" selected>{{row}}</option>
+                        {% else %}
+                            <option value="{{row.id}}">{{row}}</option>
+                        {% endif%}
+					{% endfor %}
+				</select></td>
+			</tr>
+
+			<td>employees</td>
+			<td><input maxlength="20" name="employees" size="15" type="text" value="{{query.employees}}"></td>
+			<td>costs</td>
+			<td><input maxlength="20" name="costs" size="15" type="text" value="{{query.costs}}"></td>
+			<td>profits</td>
+			<td><input maxlength="20" name="profits" size="15" type="text" value="{{query.profits}}"></td>
+
+			</tr>
+
+			<tr>
+				<td><input name="ins" type="submit" value="Save"></td>
+				<td><input name="del" type="reset" value="Discard"></td>
+			</tr>
+		</tbody>
+	</table>
+
+</form>

@@ -1,0 +1,54 @@
+<form method="post" action="">
+	{% csrf_token %}
+
+	<table align="left" border="1" cellpadding="1" cellspacing="1" style="width: 500px">
+		<caption>New item</caption>
+		<tbody>
+			<!--<tr>-->
+				<!--<td>flight</td>-->
+				<!--<td><input maxlength="10" name="reis" size="10" type="text" value=""></td>-->
+			<!--</tr>-->
+			<tr>
+				<td>Farm</td>
+				<td><select name="farm">
+					{% for row in farm %}
+						<option value="{{row.id}}">{{row}}</option>
+					{% endfor %}
+				</select></td>
+			</tr>
+			<tr>
+				<td>Type</td>
+				<td><select name="type">
+					{% for row in type %}
+						<option value="{{row.id}}">{{row}}</option>
+					{% endfor %}
+				</select></td>
+			</tr>
+			<tr>
+				<td>Region</td>
+				<td><select name="region">
+					{% for row in region %}
+						<option value="{{row.id}}">{{row}}</option>
+					{% endfor %}
+				</select></td>
+			</tr>
+
+			<td>employees</td>
+			<td><input maxlength="20" name="employees" size="15" type="text"></td>
+			<td>costs</td>
+			<td><input maxlength="20" name="costs" size="15" type="text"></td>
+			<td>profits</td>
+			<td><input maxlength="20" name="profits" size="15" type="text"></td>
+
+			</tr>
+
+
+
+			<tr>
+				<td><input name="ins" type="submit" value="Save"></td>
+				<td><input name="del" type="reset" value="Discard"></td>
+			</tr>
+		</tbody>
+	</table>
+
+</form>

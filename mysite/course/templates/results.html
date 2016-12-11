@@ -1,0 +1,46 @@
+
+<form method="post" action="">
+	{% csrf_token %}
+	<table align="left" border="1" cellpadding="1" cellspacing="1" style="width: 500px">
+		<caption>flights</caption>
+		<thead>
+			<tr>
+				<th scope="col">flight</th>
+				<th scope="col">airlines</th>
+				<th scope="col">departure</th>
+				<th scope="col">destination</th>
+				<th scope="col">plane</th>
+				<th scope="col">date of departure</th>
+
+				<th scope="col">&nbsp; &nbsp;Delete&nbsp;</th>
+				<th scope="col">&nbsp; &nbsp;Edit&nbsp;</th>
+			</tr>
+		</thead>
+		<!--<tr>-->
+				<!--<th scope="col"><a href="http://fgh"></a></th>-->
+				<!--<th scope="col"></th>-->
+				<!--<th scope="col"></th>-->
+				<!--<th scope="col"></th>-->
+				<!--<th scope="col"></th>-->
+				<!--<th scope="col"></th>-->
+				<!--<th scope="col"></th>-->
+				<!--<th scope="col"><input name="Find1" type="button" value="Delete"></th>-->
+				<!--<th scope="col"><input name="Find1" type="button" value="Edit"></th>-->
+
+		<!--</tr>-->
+		{% for row in query %}
+			<tr>
+				{% for cell in row %}
+					<td>
+						{{ cell }}
+					</td>
+				{% endfor %}
+				<td><input type="submit" name="Delete" value="Delete_{{row.0}}"></td>
+				<td><input type="submit" name="Edit" value="Edit_{{row.0}}"></td>
+			</tr>
+		{% endfor %}
+	</table>
+	<p></p>
+	<input name="Ins" type="submit" value="Add new">
+	<input name="Find" type="submit" value="Search">
+</form>

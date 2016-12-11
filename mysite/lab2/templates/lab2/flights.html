@@ -1,0 +1,132 @@
+
+<form method="post" action="">
+	{% csrf_token %}
+	<table align="left" border="1" cellpadding="1" cellspacing="1" style="width: 500px">
+		<caption>flights</caption>
+		<thead>
+			<tr>
+				<th scope="col">flight</th>
+				<th scope="col">airlines</th>
+				<th scope="col">departure</th>
+				<th scope="col">destination</th>
+				<th scope="col">plane</th>
+
+				<th scope="col">date</th>
+				<th scope="col">passengers</th>
+
+				<th scope="col">&nbsp; &nbsp;Delete&nbsp;</th>
+				<th scope="col">&nbsp; &nbsp;Edit&nbsp;</th>
+			</tr>
+		</thead>
+		<!--<tr>-->
+				<!--<th scope="col"><a href="http://fgh"></a></th>-->
+				<!--<th scope="col"></th>-->
+				<!--<th scope="col"></th>-->
+				<!--<th scope="col"></th>-->
+				<!--<th scope="col"></th>-->
+				<!--<th scope="col"></th>-->
+				<!--<th scope="col"></th>-->
+				<!--<th scope="col"><input name="Find1" type="button" value="Delete"></th>-->
+				<!--<th scope="col"><input name="Find1" type="button" value="Edit"></th>-->
+
+		<!--</tr>-->
+		{% for row in query %}
+			<tr>
+					<td>
+						{{ row.id }}
+					</td>
+					<td>
+						{{ row.airlines.name }}
+					</td>
+					<td>
+						{{ row.departure.city }}
+					</td>
+					<td>
+						{{ row.destination.city }}
+					</td>
+					<td>
+						{{ row.plane.name }}
+					</td>
+					<td>
+						{{ row.date }}
+					</td>
+					<td>
+						{{ row.passengers }}
+
+
+					</td>
+				<td><button type="submit" name="Delete" value="{{row.id}}">Delete</button></p></td>
+				<td><button type="submit" name="Edit" value="{{row.id}}">Edit</button></td>
+			</tr>
+		{% endfor %}
+
+
+	</table>
+
+	<table align="left" border="1" cellpadding="1" cellspacing="1" style="width: 500px">
+		<caption>Mapreduce1</caption>
+		<thead>
+			<tr>
+				<th scope="col">airlines</th>
+				<th scope="col">passengers</th>
+			</tr>
+		</thead>
+
+		{% for row in mreduce1 %}
+			<tr>
+					<td>
+						{{ row.id }}
+					</td>
+					<td>
+						{{ row.value }}
+					</td>
+			</tr>
+		{% endfor %}
+	</table>
+
+	<table align="left" border="1" cellpadding="1" cellspacing="1" style="width: 500px">
+		<caption>Aggr</caption>
+		<thead>
+			<tr>
+				<th scope="col">airlines</th>
+				<th scope="col">count</th>
+			</tr>
+		</thead>
+
+		{% for row in aggr %}
+			<tr>
+					<td>
+						{{ row.id }}
+					</td>
+					<td>
+						{{ row.count }}
+					</td>
+			</tr>
+		{% endfor %}
+	</table>
+
+
+	<table align="left" border="1" cellpadding="1" cellspacing="1" style="width: 500px">
+		<caption>Mapreduce2</caption>
+		<thead>
+			<tr>
+				<th scope="col">city</th>
+				<th scope="col">passengers</th>
+			</tr>
+		</thead>
+
+		{% for row in mreduce2 %}
+			<tr>
+					<td>
+						{{ row.id }}
+					</td>
+					<td>
+						{{ row.value }}
+					</td>
+			</tr>
+		{% endfor %}
+	</table>
+
+	<input name="Ins" type="submit" value="Add new">
+	<input name="Find" type="submit" value="Search">
+</form>

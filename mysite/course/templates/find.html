@@ -1,0 +1,50 @@
+<form method="post" action="">
+	{% csrf_token %}
+<table align="left" border="1" cellpadding="1" cellspacing="1" style="width: 500px">
+	<caption>Search</caption>
+	<tbody>
+		<tr>
+				<td>Farm</td>
+				<td><select name="farm">
+					<option value=""></option>
+					{% for row in farm %}
+						<option value="{{row.id}}">{{row}}</option>
+					{% endfor %}
+				</select></td>
+			</tr>
+			<tr>
+				<td>Type</td>
+				<td><select name="type">
+					<option value=""></option>
+					{% for row in type %}
+						<option value="{{row.id}}">{{row}}</option>
+					{% endfor %}
+				</select></td>
+			</tr>
+			<tr>
+				<tr>
+				<td>Region</td>
+				<td><select name="region">
+					<option value=""></option>
+					{% for row in region %}
+						<option value="{{row.id}}">{{row}}</option>
+					{% endfor %}
+				</select></td>
+			<tr>
+			<td>Profit(more than)</td>
+			<td><input maxlength="15" name="profit" size="15" type="text"></td>
+			<td>Employees(less than)</td>
+			<td><input maxlength="15" name="employees" size="15" type="text"></td>
+
+		</tr>
+
+
+		<tr>
+			<td><input name="seek" type="submit" value="Search"></td>
+
+		</tr>
+
+	</tbody>
+</table>
+
+</form>

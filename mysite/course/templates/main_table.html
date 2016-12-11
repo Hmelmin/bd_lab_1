@@ -1,0 +1,51 @@
+
+<form method="post" action="">
+	{% csrf_token %}
+	<table align="left" border="1" cellpadding="1" cellspacing="1" style="width: 500px">
+		<caption>main table</caption>
+		<thead>
+			<tr>
+				<th scope="col">number</th>
+				<th scope="col">farm</th>
+				<th scope="col">type</th>
+				<th scope="col">regions</th>
+				<th scope="col">employees</th>
+				<th scope="col">costs</th>
+				<th scope="col">profit</th>
+
+
+				<th scope="col">&nbsp; &nbsp;Delete&nbsp;</th>
+				<th scope="col">&nbsp; &nbsp;Edit&nbsp;</th>
+			</tr>
+		</thead>
+		<!--<tr>-->
+				<!--<th scope="col"><a href="http://fgh"></a></th>-->
+				<!--<th scope="col"></th>-->
+				<!--<th scope="col"></th>-->
+				<!--<th scope="col"></th>-->
+				<!--<th scope="col"></th>-->
+				<!--<th scope="col"></th>-->
+				<!--<th scope="col"></th>-->
+				<!--<th scope="col"><input name="Find1" type="button" value="Delete"></th>-->
+				<!--<th scope="col"><input name="Find1" type="button" value="Edit"></th>-->
+
+		<!--</tr>-->
+		{% for row in query %}
+			<tr>
+				<td>{{row.id}}</td>
+				<td>{{row.farm}}</td>
+				<td>{{row.type}}</td>
+				<td>{{row.region}}</td>
+				<td>{{row.employees}}</td>
+				<td>{{row.costs}}</td>
+				<td>{{row.profits}}</td>
+
+				<td><input type="submit" name="Delete" value="Delete_{{row.id}}"></td>
+				<td><input type="submit" name="Edit" value="Edit_{{row.id}}"></td>
+			</tr>
+		{% endfor %}
+	</table>
+	<p></p>
+	<input name="Ins" type="submit" value="Add new">
+	<input name="Find" type="submit" value="Search">
+</form>

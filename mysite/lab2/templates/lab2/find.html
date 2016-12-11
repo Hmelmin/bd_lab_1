@@ -1,0 +1,34 @@
+<form method="post" action="">
+	{% csrf_token %}
+<table align="left" border="1" cellpadding="1" cellspacing="1" style="width: 500px">
+	<caption>Search</caption>
+	<tbody>
+		<tr>
+			<td>Departure</td>
+			<td><input maxlength="20" name="city_out" size="15" type="text"></td>
+		</tr>
+		<tr>
+			<td>Destination</td>
+			<td><input maxlength="20" name="city_in" size="15" type="text"></td>
+		</tr>
+		<tr>
+			<td>Date</td>
+				<td><input type="date"  name="date" ></td>
+		</tr>
+		<tr>
+			<td>Plane</td>
+			<td><input maxlength="25" name="plane" size="15" type="text"></td>
+		</tr>
+		<tr>
+			<td>Airline</td>
+			<td><input maxlength="20" name="airline" size="15" type="text"></td>
+		</tr>
+
+		<tr>
+			<td><input name="seek" type="submit" value="Search"></td>
+		</tr>
+		
+	</tbody>
+</table>
+
+</form>

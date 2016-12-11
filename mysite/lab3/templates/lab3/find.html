@@ -1,0 +1,19 @@
+<form method="post" action="">
+	{% csrf_token %}
+<table align="left" border="1" cellpadding="1" cellspacing="1" style="width: 500px">
+	<caption>Search</caption>
+	<tbody>
+
+		<tr>
+			<td>Date</td>
+			<td><input type="date"  name="date" ></td>
+		</tr>
+
+		<tr>
+			<td><input name="seek" type="submit" value="Search"></td>
+		</tr>
+		
+	</tbody>
+</table>
+
+</form>

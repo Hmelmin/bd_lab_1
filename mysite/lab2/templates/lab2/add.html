@@ -1,0 +1,43 @@
+<form method="post" action="">
+	{% csrf_token %}
+
+	<table align="left" border="1" cellpadding="1" cellspacing="1" style="width: 500px">
+		<caption>New flight</caption>
+		<tbody>
+			<!--<tr>-->
+				<!--<td>flight</td>-->
+				<!--<td><input maxlength="10" name="reis" size="10" type="text" value=""></td>-->
+			<!--</tr>-->
+			<tr>
+				<td>Airlines</td>
+				<td><input type="text" name="avia"></td>
+			</tr>
+			<tr>
+				<td>Departure</td>
+				<td><input type="text" name="city_out"></td>
+			</tr>
+			<tr>
+				<td>Destination</td>
+				<td><input type="text" name="city_in"></td>
+			</tr>
+			<tr>
+				<td>plane</td>
+				<td><input type="text" name="plane"></td>
+			</tr>
+			<tr>
+				<td>Date</td>
+				<td><input type="date" name="date"></td>
+			</tr>
+			<tr>
+				<td>Passengers</td>
+				<td><input type="text" name="passengers"></td>
+			</tr>
+
+			<tr>
+				<td><input name="ins" type="submit" value="Save"></td>
+				<td><input name="del" type="reset" value="Discard"></td>
+			</tr>
+		</tbody>
+	</table>
+
+</form>
